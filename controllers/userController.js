@@ -5,6 +5,11 @@ const userController = {
         User.find({}).then((users) => {
             res.send(users)
         })
+    },
+    show: (req, res) => {
+        User.findById(req.params.id).then((users) => {
+            res.send(users)
+        })
     }
 }
 

@@ -11,8 +11,14 @@ const atarius = new User({
     passport: true,
     trips: []
 })
+const testuser = new User({
+    username: "testuser",
+    location: "somewhere",
+    dreamTrip: "anywhere"
+})
 
 User.remove({})
     .then(() => atarius.save())
+    .then(() => testuser.save())
     .then(() => console.log('DB Seeded'))
     .then(() => mongoose.connection.close())
