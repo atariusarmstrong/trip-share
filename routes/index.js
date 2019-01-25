@@ -10,5 +10,6 @@ router.get('/users', userController.index)
 router.get('/users/:id', userController.show)
 
 router.get('/groups', groupController.index)
+router.get('/groups/:groupId', groupController.show)
 
 module.exports = router
