@@ -29,6 +29,13 @@ const tripController = {
         .then(()=> {
             res.send(200)
         })
+    },
+    update: (req, res) => {
+        Trip.findByIdAndUpdate(req.params.tripId, req.body, {new: true})
+        .then((updateTrip) => {
+            updateTrip.save()
+            res.send(updateTrip)
+        })
     }
 }
 
