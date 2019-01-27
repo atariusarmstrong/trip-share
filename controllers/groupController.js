@@ -18,7 +18,7 @@ const groupController = {
             })
     },
     update: (req, res) => {
-        Group.findByIdAndUpdate(req.params.groupId, req.body)
+        Group.findByIdAndUpdate(req.params.groupId, req.body, {new: true})
         .then((updateGroup) => {
             updateGroup.save()
             res.send(updateGroup)
