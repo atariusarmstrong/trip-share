@@ -10,6 +10,9 @@ router.get('/users', userController.index)
 router.get('/users/:id', userController.show)
 
 router.get('/groups', groupController.index)
+router.post('/groups', groupController.create)
 router.get('/groups/:groupId', groupController.show)
+router.patch('/groups/:groupId', groupController.update)
+router.delete('/groups/:groupId', groupController.delete)
 
 module.exports = router
