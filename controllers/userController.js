@@ -7,7 +7,7 @@ const userController = {
         })
     },
     show: (req, res) => {
-        User.findById(req.params.id).then((users) => {
+        User.findById(req.params.userId).then((users) => {
             res.send(users)
         })
     }
