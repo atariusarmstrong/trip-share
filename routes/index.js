@@ -19,6 +19,6 @@ router.delete('/groups/:groupId', groupController.delete)
 router.get('/trips', tripController.index)
 // router.post('/users/:userId', tripController.create)
 router.get('/trips/:tripId', tripController.show)
-router.delete('/trips', tripController.delete)
+router.delete('/trips/:tripId', tripController.delete)
 
 module.exports = router
