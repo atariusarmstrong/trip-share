@@ -10,6 +10,12 @@ const userController = {
         User.findById(req.params.userId).then((users) => {
             res.send(users)
         })
+    },
+    create: (req, res) => {
+        User.create(req.body)
+        .then((user) => {
+            res.send(user)
+        })
     }
 }
 

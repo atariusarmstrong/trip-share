@@ -6,6 +6,7 @@ const groupController = require('../controllers/groupController')
 const tripController = require('../controllers/tripController')
 
 router.get('/', appController.index)
+router.post('/signup', userController.create)
 
 router.get('/users', userController.index)
 router.get('/users/:userId', userController.show)
