@@ -7,7 +7,7 @@ const userController = {
         })
     },
     show: (req, res) => {
-        User.findById(req.params.userId).then((users) => {
+        User.findById(req.params.userId).populate('trips').then((users) => {
             res.send(users)
         })
     },

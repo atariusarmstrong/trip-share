@@ -7,7 +7,10 @@ const User = new Schema({
     location: String,
     dreamTrip: String,
     passport: Boolean,
-    trips: [{}]
+    trips: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Trip'
+    }]
 })
 
 module.exports = mongoose.model('User', User)
