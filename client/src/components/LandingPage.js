@@ -1,12 +1,36 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
+const Button = styled.button`
+    border-radius: 20px;
+    background: white;
+    width: 261px;
+    height: 75px;
+    font-family: SignPainter;
+    font-size: 40px
+    color: #707070;
+`
+
+const Header = styled.h1`
+    font-family: SignPainter;
+    font-size: 120px;
+    color: #707070;
+`
+
+const Tag = styled.p`
+    font-size: 40px;
+    font-family: "Source Serif Pro"
+`
 
 class LandingPage extends Component {
     render() {
         return (
             <div>
-                <h1>TripShare</h1>
-                <p>Let's plan your next trip together.</p>
+                <Header>TripShare</Header>
+                <Tag>Let's plan your next trip together.</Tag>
+
+                <Link to='/signup'><Button>Let's Go!</Button></Link>
             </div>
         );
     }
