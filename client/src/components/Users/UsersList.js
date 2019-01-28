@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+
+const UserBlock = styled.div`
+    background: #D5FFFF;
+    border-radius: 20px;
+    height: 400px;
+    width: 400px;
+    float: left;
+    margin: 10px;
+`
+const ProfilePic = styled.img`
+    height: 150px;
+    width: 250px;
+`
 
 class UsersList extends Component {
     state = {
@@ -21,13 +35,13 @@ class UsersList extends Component {
                 Here's a list of users
 
                 {this.state.users.map((user, i) => (
-                    <div key={i}>
+                    <UserBlock key={i}>
                     <Link to={`/users/${user._id}`}>
-                        <img src={user.image} alt={user.username}/>
+                        <ProfilePic src={user.image} alt={user.username}/>
                         <h3>{user.username}</h3>
                         <h4>{user.location}</h4>
                     </Link>
-                    </div> 
+                    </UserBlock> 
                 ))}
             </div>
         );
