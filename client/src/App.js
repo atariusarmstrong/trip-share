@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import LandingPage from './components/LandingPage';
+import UserSignUp from './components/Users/UserSignUp';
 
 
 
@@ -12,6 +13,7 @@ class App extends Component {
        <Router>
          <Switch>
            <Route exact path="/" component={LandingPage} />
+           <Route esact path="/signup" component={UserSignUp} />
          </Switch>
        </Router>
       </div>
