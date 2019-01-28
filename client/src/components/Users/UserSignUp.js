@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const Container = styled.div`
     width: 800px;
@@ -24,7 +25,6 @@ class UserSignUp extends Component {
 
     handleChange = (e) => {
         const newState = {...this.state.user}
-        // console.log(newState)
         newState[e.target.name] = e.target.value
         this.setState({user: newState})
     }
@@ -50,7 +50,7 @@ class UserSignUp extends Component {
                         <input type="text" name="dreamTrip" value={this.state.user.dreamTrip} placeholder="Where's your dream destination?" onChange={this.handleChange}/><br/>
                         <input type="checkbox"/> Passport?
                         <br/>
-                        <button type="submit">Sign Up</button>
+                        <Link to="/users"><button type="submit">Sign Up</button></Link>
                     </form>
                 </Container>
             </div>
