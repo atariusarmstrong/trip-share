@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
+
 
 const Container = styled.div`
     width: 800px;
@@ -20,7 +21,8 @@ class UserSignUp extends Component {
             location: "",
             dreamTrip: "",
             passport: Boolean,
-        }
+        },
+        redirect: false,
     }
 
     handleChange = (e) => {
@@ -29,6 +31,12 @@ class UserSignUp extends Component {
         this.setState({user: newState})
     }
 
+    renderRedirect = () => {
+        if (this.state.redirect) {
+          return <Redirect to='/users' />
+        }
+      }
+
     handleSubmit = (e) => {
         e.preventDefault()
         const payload = this.state.user
@@ -36,6 +44,7 @@ class UserSignUp extends Component {
         console.log((res) => {
             console.log(res.data)
         })
+        this.setState({redirect: true})
     }
 
 
@@ -50,7 +59,8 @@ class UserSignUp extends Component {
                         <input type="text" name="dreamTrip" value={this.state.user.dreamTrip} placeholder="Where's your dream destination?" onChange={this.handleChange}/><br/>
                         <input type="checkbox"/> Passport?
                         <br/>
-                        <Link to="/users"><button type="submit">Sign Up</button></Link>
+                        {this.renderRedirect()}
+                        <button type="submit">Sign Up</button>
                     </form>
                 </Container>
             </div>
