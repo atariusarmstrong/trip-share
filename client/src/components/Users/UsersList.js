@@ -12,7 +12,7 @@ class UsersList extends Component {
 
     getAllUsers = () => {
         Axios.get('/api/users')
-        .then((res) => this.setState(res.data))
+        .then((res) => this.setState({users: res.data}))
     }
     render() {
         return (
@@ -21,7 +21,8 @@ class UsersList extends Component {
 
                 {this.state.users.map((user, i) => (
                     <div key={i}>
-                        {user.username}
+                        <h3>{user.username}</h3>
+                        <h4>{user.location}</h4>
                     </div> 
                 ))}
             </div>
