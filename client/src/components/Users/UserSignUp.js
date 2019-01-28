@@ -18,6 +18,7 @@ class UserSignUp extends Component {
     state = {
         user: {
             username: "",
+            image: "",
             location: "",
             dreamTrip: "",
             passport: Boolean,
@@ -54,7 +55,8 @@ class UserSignUp extends Component {
                 <Container>
                     <h2>Tell us about yourself</h2>
                     <form onSubmit={this.handleSubmit}>
-                        <input type="text" name="username" value={this.state.user.username} placeholder="username" onChange={this.handleChange}/><br/>
+                        <input type="text" name="username" value={this.state.user.username} placeholder="username" onChange={this.handleChange} required/><br/>
+                        <input type="text" name="image" value={this.state.user.image} placeholder="Link to Profile Photo" onChange={this.handleChange} /><br/>
                         <input type="text" name="location" value={this.state.user.location} placeholder="Where are you from?" onChange={this.handleChange}/><br/>
                         <input type="text" name="dreamTrip" value={this.state.user.dreamTrip} placeholder="Where's your dream destination?" onChange={this.handleChange}/><br/>
                         <input type="checkbox"/> Passport?
