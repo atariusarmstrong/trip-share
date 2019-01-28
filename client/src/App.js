@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import LandingPage from './components/LandingPage';
+
 
 
 
@@ -6,7 +9,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        Hello World
+       <Router>
+         <Switch>
+           <Route exact path="/" component={LandingPage} />
+         </Switch>
+       </Router>
       </div>
     );
   }
