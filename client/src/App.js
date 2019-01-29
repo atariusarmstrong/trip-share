@@ -4,6 +4,8 @@ import LandingPage from './components/LandingPage';
 import UserSignUp from './components/Users/UserSignUp';
 import SingleUser from './components/Users/SingleUser';
 import UsersList from './components/Users/UsersList';
+import AddTripForm from './components/Trips/AddTripForm';
+import TripsList from './components/Trips/TripsList';
 
 
 
@@ -18,6 +20,8 @@ class App extends Component {
            <Route exact path="/signup" component={UserSignUp} />
            <Route exact path="/users" component={UsersList} />
            <Route exact path="/users/:userId" component={SingleUser} />
+           <Route exact path="/addtrip" component={AddTripForm} />
+           <Route exact path="/trips" component={TripsList} />
          </Switch>
        </Router>
       </div>

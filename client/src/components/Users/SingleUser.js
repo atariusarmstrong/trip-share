@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+
 
 const InfoBlock = styled.div`
     width: 400px;
@@ -23,10 +25,18 @@ const TripBlock = styled.div`
 
 const Header = styled.h2`
     font-family: SignPainter;
-    font-size: 30px
+    font-size: 40px
     color: #707070;
 `
-
+const Button = styled.button`
+    background: #707070;
+    width: 154px;
+    height: 43px;
+    font-family: Avenir;
+    font-size: 15px
+    letter-spacing: 2px;
+    color: white;
+`
 
 class SingleUser extends Component {
     state = {
@@ -49,6 +59,7 @@ class SingleUser extends Component {
         axios.get(`/api/users/${userId}`)
         .then((res) => this.setState({ user: res.data }))
     }
+
     render() {
         return (
             <div>
@@ -67,7 +78,14 @@ class SingleUser extends Component {
                             {trips.destination}
                         </div>
                     ))}
+                    <Link to="/addtrip"><Button>Add Trip</Button></Link>
                 </TripBlock>
+
+                <TripBlock>
+                    <Header>Groups</Header>
+                    <Button>Add Group</Button>
+                </TripBlock>
+
             </div>
         );
     }
