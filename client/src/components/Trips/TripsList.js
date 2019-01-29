@@ -22,7 +22,11 @@ const Body = styled.div`
 
 class TripsList extends Component {
     state = {
-        trips: [{}]
+        trips: [{
+            flight: {
+                airline: ""
+            }
+        }]
     }
 
     componentDidMount() {
@@ -46,7 +50,7 @@ class TripsList extends Component {
                             <h3>{trips.from}</h3>
                             <h3>{trips.to}</h3>
                             <p>{trips.accomodation}</p>
-                            {/* <p>{trips.flight.airline}</p> */}
+                            <p>{trips.flight.airline}</p>
                         </TripBlock>
                     ))}
                 </div>
