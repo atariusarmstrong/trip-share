@@ -18,7 +18,7 @@ router.patch('/groups/:groupId', groupController.update)
 router.delete('/groups/:groupId', groupController.delete)
 
 router.get('/trips', tripController.index)
-router.post('/users/:userId', tripController.create)
+router.post('/addtrip', tripController.create)
 router.get('/trips/:tripId', tripController.show)
 router.patch('/trips/:tripId', tripController.update)
 router.delete('/trips/:tripId', tripController.delete)
