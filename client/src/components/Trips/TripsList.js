@@ -1,10 +1,56 @@
 import React, { Component } from 'react';
+import NavBar from '../NavBar';
+import axios from 'axios'
+import styled from 'styled-components'
+
+const TripBlock = styled.div`
+    width: 400px;
+    height: 500px;
+    float: left;
+    margin: 10px;
+    background: #D5FFFF;
+    font-size: 20px;
+    border-radius: 20px;
+`
+
+const Body = styled.div`
+    font-family: Avenir;
+    letter-spacing: 2px;
+    color: #707070;
+    text-align: center;
+`
 
 class TripsList extends Component {
+    state = {
+        trips: [{}]
+    }
+
+    componentDidMount() {
+        this.getAllTrips()
+    }
+
+    getAllTrips = () => {
+        axios.get('/api/trips')
+        .then((res) => this.setState({trips: res.data}))
+    }
     render() {
         return (
             <div>
-                Here is a list of trips
+                <NavBar />
+                <Body>
+                <h1>Upcoming Trips</h1>
+                <div>
+                    {this.state.trips.map((trips, i) => (
+                        <TripBlock key={i}>
+                            <h2>{trips.destination}</h2>
+                            <h3>{trips.from}</h3>
+                            <h3>{trips.to}</h3>
+                            <p>{trips.accomodation}</p>
+                            {/* <p>{trips.flight.airline}</p> */}
+                        </TripBlock>
+                    ))}
+                </div>
+                </Body>
             </div>
         );
     }

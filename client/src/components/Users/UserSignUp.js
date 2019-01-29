@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
+import NavBar from '../NavBar';
 
 
 const Container = styled.div`
@@ -52,6 +53,7 @@ class UserSignUp extends Component {
     render() {
         return (
             <div>
+                <NavBar />
                 <Container>
                     <h2>Tell us about yourself</h2>
                     <form onSubmit={this.handleSubmit}>

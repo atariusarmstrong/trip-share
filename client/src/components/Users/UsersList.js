@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import NavBar from '../NavBar';
 
 const UserBlock = styled.div`
     background: #D5FFFF;
@@ -32,7 +33,7 @@ class UsersList extends Component {
     render() {
         return (
             <div>
-                Here's a list of users
+                <NavBar />
 
                 {this.state.users.map((user, i) => (
                     <UserBlock key={i}>

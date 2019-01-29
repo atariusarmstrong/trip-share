@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import NavBar from '../NavBar';
 
 
 const InfoBlock = styled.div`
@@ -63,6 +64,7 @@ class SingleUser extends Component {
     render() {
         return (
             <div>
+                <NavBar />
                 <InfoBlock>
                     {this.state.user.username}<br/>
                     {this.state.user.location}<br/>
