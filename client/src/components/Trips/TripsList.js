@@ -18,6 +18,7 @@ const Body = styled.div`
     letter-spacing: 2px;
     color: #707070;
     text-align: center;
+    text-transform: uppercase;
 `
 
 class TripsList extends Component {
