@@ -19,15 +19,23 @@ const Body = styled.div`
     color: #707070;
     text-align: center;
     text-transform: uppercase;
+    align-content: center;
+    textarea {
+        outline: none;
+        font-family: Avenir;
+        letter-spacing: 2px;
+        background: #D5FFFF;
+        resize: none;
+        border: 0px;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 20px;
+    }
 `
 
 class TripsList extends Component {
     state = {
-        trips: [{
-            flight: {
-                airline: ""
-            }
-        }]
+        trips: [{}]
     }
 
     componentDidMount() {
@@ -47,11 +55,11 @@ class TripsList extends Component {
                 <div>
                     {this.state.trips.map((trips, i) => (
                         <TripBlock key={i}>
-                            <h2>{trips.destination}</h2>
+                            <h2><textarea placeholder={trips.destination}></textarea></h2>
                             <h3>{trips.from}</h3>
                             <h3>{trips.to}</h3>
-                            <p>{trips.accomodation}</p>
-                            <p>{trips.flight.airline}</p>
+                            <p><textarea placeholder={trips.accomodation}></textarea></p>
+                            <p><textarea placeholder={trips.transportation}></textarea></p>
                         </TripBlock>
                     ))}
                 </div>

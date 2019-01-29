@@ -10,16 +10,12 @@ const Trip = require('../models/Trip')
 const barcelona = new Trip({
     destination: "Barcelona",
     accomodation: "AirBnB",
-    flight: {
-        airline: "Delta"
-    }
+    transportation: "Delta"
 })
 const toronto = new Trip({
     destination: "Toronto, Canada",
     accomodation: "Swanky Hotel",
-    flight: {
-        airline: "Southwest"
-    }
+    transportation: "Soutwest"
 })
 const atarius = new User({
     username: "atariusarmstrong",
