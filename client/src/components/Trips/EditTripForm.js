@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import NavBar from '../NavBar'
+import { Redirect } from 'react-router-dom'
 
 class EditTripForm extends Component {
     state = {
@@ -10,7 +11,8 @@ class EditTripForm extends Component {
             to: "",
             accomodation: "",
             transportation: "",
-        }
+        },
+        redirect: false
     }
 
     handleChange = (e) => {
@@ -18,6 +20,12 @@ class EditTripForm extends Component {
         newState[e.target.name] = e.target.value
         this.setState({trip: newState})
         // console.log(newState)
+    }
+
+    renderRedirect = () => {
+        if (this.state.redirect) {
+            return <Redirect to='/trips' />
+        }
     }
 
     handleSubmit = (e) => {
@@ -28,6 +36,7 @@ class EditTripForm extends Component {
         console.log((res) => {
             console.log(res.data)
         })
+        this.setState({redirect: true})
     }
     render() {
         return (
@@ -41,6 +50,7 @@ class EditTripForm extends Component {
                         <input type="date" name="to" value={this.state.trip.to} onChange={this.handleChange}/><br/>
                         <input type="text" name="accomodation" value={this.state.trip.accomodation} placeholder="Accomodation" onChange={this.handleChange}/><br/>
                         <input type="text" name="transportation" value={this.state.trip.transportation} placeholder="Transportation" onChange={this.handleChange}/><br/>
+                        {this.renderRedirect()}
                         <button>Let's Go!</button>
                     </form>
                 </div>

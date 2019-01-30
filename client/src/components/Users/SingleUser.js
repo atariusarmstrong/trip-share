@@ -80,7 +80,7 @@ class SingleUser extends Component {
                             {trips.destination}
                         </div>
                     ))}
-                    <Link to="/addtrip"><Button>Add Trip</Button></Link>
+                    <Link to={`/addtrip`}><Button>Add Trip</Button></Link>
                 </TripBlock>
 
                 <TripBlock>
