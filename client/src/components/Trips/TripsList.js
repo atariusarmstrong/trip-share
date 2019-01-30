@@ -13,24 +13,13 @@ const TripBlock = styled.div`
     border-radius: 20px;
 `
 
-const Body = styled.div`
+const Body = styled.form`
     font-family: Avenir;
     letter-spacing: 2px;
     color: #707070;
     text-align: center;
     text-transform: uppercase;
     align-content: center;
-    textarea {
-        outline: none;
-        font-family: Avenir;
-        letter-spacing: 2px;
-        background: #D5FFFF;
-        resize: none;
-        border: 0px;
-        text-align: center;
-        text-transform: uppercase;
-        font-size: 20px;
-    }
 `
 
 class TripsList extends Component {
@@ -46,6 +35,7 @@ class TripsList extends Component {
         axios.get('/api/trips')
         .then((res) => this.setState({trips: res.data}))
     }
+
     render() {
         return (
             <div>
@@ -55,11 +45,13 @@ class TripsList extends Component {
                 <div>
                     {this.state.trips.map((trips, i) => (
                         <TripBlock key={i}>
-                            <h2><textarea placeholder={trips.destination}></textarea></h2>
+                            <h2>{trips.destination}</h2>
                             <h3>{trips.from}</h3>
                             <h3>{trips.to}</h3>
-                            <p><textarea placeholder={trips.accomodation}></textarea></p>
-                            <p><textarea placeholder={trips.transportation}></textarea></p>
+                            <p>{trips.accomodation}</p>
+                            <p>{trips.transportation}</p>
+                            <button>Edit</button>
+                            <button>Delete</button>
                         </TripBlock>
                     ))}
                 </div>
