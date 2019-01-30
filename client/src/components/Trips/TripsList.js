@@ -52,7 +52,7 @@ class TripsList extends Component {
                 <h1>Upcoming Trips</h1>
                 <div>
                     {this.state.trips.map((trips, i) => (
-                        <TripBlock key={i}>
+                        <TripBlock key={i}><Link to={`/trips/${trips._id}`}>
                             <h2>{trips.destination}</h2>
                             <h3>{trips.from}</h3>
                             <h3>{trips.to}</h3>
@@ -60,6 +60,7 @@ class TripsList extends Component {
                             <p>{trips.transportation}</p>
                             <Link to={`/trips/${trips._id}`}><button>Edit</button></Link>
                             <button onClick={this.deleteTrip}>Delete</button>
+                            </Link>
                         </TripBlock>
                     ))}
                 </div>
