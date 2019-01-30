@@ -12,10 +12,7 @@ const TripBlock = styled.div`
     background: #D5FFFF;
     font-size: 20px;
     border-radius: 20px;
-    a {
-        text-decoration: none;
-        color: #707070;
-    }
+    
 `
 
 const Body = styled.form`
@@ -25,8 +22,25 @@ const Body = styled.form`
     text-align: center;
     text-transform: uppercase;
     align-content: center;
+    a {
+        text-decoration: none;
+        color: #707070;
+    }
+`
+const TripsContainer = styled.div`
+    width: 1260px;
+    margin: 0 auto;
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
 `
 
+const AddButton = styled.div`
+    background: #D5FFFF;
+    border-radius: 100%;
+    height: 100px;
+    width: 100px;
+    font-size: 60px;
+`
 class TripsList extends Component {
     state = {
         trips: [{}]
@@ -53,20 +67,27 @@ class TripsList extends Component {
             <div>
                 <NavBar />
                 <Body>
-                <h1>Upcoming Trips</h1>
-                <div>
-                    {this.state.trips.map((trips, i) => (
-                        <TripBlock key={i}>
-                            <Link to={`/trips/${trips._id}`}>
-                                <h2>{trips.destination}</h2>
-                                <h3>{trips.from}</h3>
-                                <h3>{trips.to}</h3>
-                                <p>{trips.accomodation}</p>
-                                <p>{trips.transportation}</p>
-                            </Link>
-                        </TripBlock>
-                    ))}
-                </div>
+                    <h1>Upcoming Trips</h1>
+                    <TripsContainer>
+                        {this.state.trips.map((trips, i) => (
+                            <TripBlock key={i}>
+                                <Link to={`/trips/${trips._id}`}>
+                                    <h2>{trips.destination}</h2>
+                                    <h3>{trips.from}</h3>
+                                    <h3>{trips.to}</h3>
+                                    <p>{trips.accomodation}</p>
+                                    <p>{trips.transportation}</p>
+                                </Link>
+                            </TripBlock>
+                        ))}
+                        <Link to='/addtrip'>
+                            <AddButton>
+                                <span>+</span>
+                            </AddButton>
+                        </Link>
+                        
+                    </TripsContainer>
+                    
                 </Body>
             </div>
         );
