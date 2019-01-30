@@ -37,6 +37,13 @@ class TripsList extends Component {
         .then((res) => this.setState({trips: res.data}))
     }
 
+    deleteTrip = (e) => {
+        e.preventDefault()
+        const tripId = this.state.trips[0]._id
+        console.log(tripId)
+        axios.delete(`/api/trips/${tripId}`)
+
+    }
     render() {
         return (
             <div>
@@ -52,7 +59,7 @@ class TripsList extends Component {
                             <p>{trips.accomodation}</p>
                             <p>{trips.transportation}</p>
                             <Link to={`/trips/${trips._id}`}><button>Edit</button></Link>
-                            <button>Delete</button>
+                            <button onClick={this.deleteTrip}>Delete</button>
                         </TripBlock>
                     ))}
                 </div>

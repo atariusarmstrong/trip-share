@@ -6,7 +6,7 @@ import SingleUser from './components/Users/SingleUser';
 import UsersList from './components/Users/UsersList';
 import AddTripForm from './components/Trips/AddTripForm';
 import TripsList from './components/Trips/TripsList';
-import EditTripForm from './components/Trips/EditTripForm';
+import SingleTrip from './components/Trips/SingleTrip'
 
 
 
@@ -23,7 +23,7 @@ class App extends Component {
            <Route exact path="/users/:userId" component={SingleUser} />
            <Route exact path="/addtrip" component={AddTripForm} />
            <Route exact path="/trips" component={TripsList} />
-           <Route exact path="/trips/:tripId" component={EditTripForm} />
+           <Route exact path="/trips/:tripId" component={SingleTrip} />
          </Switch>
        </Router>
       </div>

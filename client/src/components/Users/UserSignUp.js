@@ -22,7 +22,7 @@ class UserSignUp extends Component {
             image: "",
             location: "",
             dreamTrip: "",
-            passport: Boolean,
+            passport: false,
         },
         redirect: false,
     }
@@ -61,7 +61,7 @@ class UserSignUp extends Component {
                         <input type="text" name="image" value={this.state.user.image} placeholder="Link to Profile Photo" onChange={this.handleChange} /><br/>
                         <input type="text" name="location" value={this.state.user.location} placeholder="Where are you from?" onChange={this.handleChange}/><br/>
                         <input type="text" name="dreamTrip" value={this.state.user.dreamTrip} placeholder="Where's your dream destination?" onChange={this.handleChange}/><br/>
-                        <input type="checkbox"/> Passport?
+                        <input type="checkbox" value={this.state.user.passport}/> Passport?
                         <br/>
                         {this.renderRedirect()}
                         <button type="submit">Sign Up</button>

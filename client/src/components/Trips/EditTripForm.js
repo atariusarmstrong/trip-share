@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import NavBar from '../NavBar'
-import { Redirect } from 'react-router-dom'
+
 
 class EditTripForm extends Component {
     state = {
@@ -11,8 +10,7 @@ class EditTripForm extends Component {
             to: "",
             accomodation: "",
             transportation: "",
-        },
-        redirect: false
+        }
     }
 
     handleChange = (e) => {
@@ -22,26 +20,17 @@ class EditTripForm extends Component {
         // console.log(newState)
     }
 
-    renderRedirect = () => {
-        if (this.state.redirect) {
-            return <Redirect to='/trips' />
-        }
-    }
 
     handleSubmit = (e) => {
         e.preventDefault()
         const payload = this.state.trip
-        const tripId = this.props.match.params.tripId
+        const tripId = this.props.tripId
         axios.patch(`/api/trips/${tripId}`, payload)
-        console.log((res) => {
-            console.log(res.data)
-        })
-        this.setState({redirect: true})
+        .then(() => {this.props.getSingleTrip()})
     }
     render() {
         return (
             <div>
-                <NavBar />
                 <div>
                     <h2>Where are you going?</h2>
                     <form onSubmit={this.handleSubmit}>
@@ -50,7 +39,6 @@ class EditTripForm extends Component {
                         <input type="date" name="to" value={this.state.trip.to} onChange={this.handleChange}/><br/>
                         <input type="text" name="accomodation" value={this.state.trip.accomodation} placeholder="Accomodation" onChange={this.handleChange}/><br/>
                         <input type="text" name="transportation" value={this.state.trip.transportation} placeholder="Transportation" onChange={this.handleChange}/><br/>
-                        {this.renderRedirect()}
                         <button>Let's Go!</button>
                     </form>
                 </div>
