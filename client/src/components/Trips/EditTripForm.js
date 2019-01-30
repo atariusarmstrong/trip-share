@@ -27,6 +27,7 @@ class EditTripForm extends Component {
         const tripId = this.props.tripId
         axios.patch(`/api/trips/${tripId}`, payload)
         .then(() => {this.props.getSingleTrip()})
+        .then(() => {this.props.toggleEditForm()})
     }
     render() {
         return (

@@ -28,14 +28,14 @@ class SingleTrip extends Component {
             <div>
                 <NavBar />
                 <h1>{this.state.trip.destination}</h1>
-                <h3>from:{this.state.trip.from}</h3>
-                to: {this.state.trip.to}
+                <p>from:{this.state.trip.from}</p>
+                <p>to: {this.state.trip.to}</p>
                 <h2>{this.state.trip.accomodation}</h2>
                 <h2>{this.state.trip.transportation}</h2>
                 
                 <button onClick={this.toggleEditForm}>Edit</button>
 
-                {this.state.showForm ?  <EditTripForm getSingleTrip={this.getSingleTrip} tripId={this.state.trip._id}/> : null}
+                {this.state.showForm ?  <EditTripForm getSingleTrip={this.getSingleTrip} tripId={this.state.trip._id} toggleEditForm={this.toggleEditForm}/> : null}
             </div>
         );
     }
