@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NavBar from '../NavBar';
 import axios from 'axios'
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 
 const TripBlock = styled.div`
     width: 400px;
@@ -50,7 +51,7 @@ class TripsList extends Component {
                             <h3>{trips.to}</h3>
                             <p>{trips.accomodation}</p>
                             <p>{trips.transportation}</p>
-                            <button>Edit</button>
+                            <Link to={`/trips/${trips._id}`}><button>Edit</button></Link>
                             <button>Delete</button>
                         </TripBlock>
                     ))}
