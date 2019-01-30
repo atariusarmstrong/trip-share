@@ -34,7 +34,6 @@ class SingleTrip extends Component {
     deleteTrip = () => {
         const tripId = this.props.match.params.tripId
         Axios.delete(`/api/trips/${tripId}`)
-        .then(() => this.renderRedirect())
     }
 
     render() {
@@ -48,6 +47,7 @@ class SingleTrip extends Component {
                 <h2>{this.state.trip.transportation}</h2>
                 
                 <button onClick={this.toggleEditForm}>Edit</button>
+                {this.renderRedirect()}
                 <button onClick={this.deleteTrip}>Delete</button>
 
                 {this.state.showForm ?  <EditTripForm getSingleTrip={this.getSingleTrip} tripId={this.state.trip._id} toggleEditForm={this.toggleEditForm}/> : null}
