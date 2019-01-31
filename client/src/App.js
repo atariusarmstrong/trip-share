@@ -8,6 +8,7 @@ import AddTripForm from './components/Trips/AddTripForm';
 import TripsList from './components/Trips/TripsList';
 import SingleTrip from './components/Trips/SingleTrip'
 import AddGroupForm from './components/Groups/AddGroupForm';
+import GroupsList from './components/Groups/GroupsList';
 
 
 
@@ -26,6 +27,7 @@ class App extends Component {
            <Route exact path="/trips" component={TripsList} />
            <Route exact path="/trips/:tripId" component={SingleTrip} />
            <Route exact path="/users/:userId/addgroup" component={AddGroupForm}/>
+           <Route exact path="/groups" component={GroupsList} />
          </Switch>
        </Router>
       </div>
