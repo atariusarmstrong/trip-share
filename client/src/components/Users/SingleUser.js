@@ -13,9 +13,21 @@ const InfoBlock = styled.div`
     font-size: 20px;
     letter-spacing: 2px;
     background: #D5FFFF;
+    grid-row-start: 2;
+    grid-column-start: 1;
 `
 
 const TripBlock = styled.div`
+    width: 400px;
+    height: 250px
+    background: #D5FFFF;
+    border-radius: 20px;
+    float: right;
+    text-align: center;
+    align-self: center;
+`
+
+const GroupBlock = styled.div`
     width: 400px;
     height: 250px
     background: #D5FFFF;
@@ -37,6 +49,15 @@ const Button = styled.button`
     font-size: 15px
     letter-spacing: 2px;
     color: white;
+`
+const Body = styled.div`
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 75% 25%;
+`
+const ProfilePic = styled.div`
+    grid-column-start: 1;
+    grid-row-start: 1;
 `
 
 class SingleUser extends Component {
@@ -66,36 +87,40 @@ class SingleUser extends Component {
         return (
             <div>
                 <NavBar />
-                <InfoBlock>
-                    {this.state.user.username}<br/>
-                    {this.state.user.location}<br/>
-                    Dream Vaction: 
-                    {this.state.user.dreamTrip}<br/>
-                    {this.state.user.passport}<br/>
-                </InfoBlock>
- 
-                <TripBlock>
-                    <Header>Trips</Header>
-                     {this.state.user.trips.map((trips, i) => (
-                        <div key={i}>
-                            {trips.destination}
-                        </div>
-                    ))}
-                    <Link to={`/users/${this.state.user._id}/addtrip`}><Button>Add Trip</Button></Link>
-                </TripBlock>
+                <Body>
+                    <ProfilePic>
+                        <img src={this.state.user.image} alt={this.state.user.username}/>
+                    </ProfilePic>
+                    <InfoBlock>
+                        {this.state.user.username}<br/>
+                        {this.state.user.location}<br/>
+                        Dream Vaction: 
+                        {this.state.user.dreamTrip}<br/>
+                        {this.state.user.passport}<br/>
+                    </InfoBlock>
+    
+                    <TripBlock>
+                        <Header>Trips</Header>
+                        {this.state.user.trips.map((trips, i) => (
+                            <div key={i}>
+                                {trips.destination}
+                            </div>
+                        ))}
+                        <Link to={`/users/${this.state.user._id}/addtrip`}><Button>Add Trip</Button></Link>
+                    </TripBlock>
 
-                <TripBlock>
-                    <Header>Groups</Header>
-                    {this.state.user.groups.map((groups, i) => (
-                        <div key={i}>
-                            {groups.name}
-                        </div>
-                    ))}
-                    <Link to={`/users/${this.state.user._id}/addgroup`}>
-                        <Button>Add Group</Button>
-                    </Link>
-                </TripBlock>
-
+                    <GroupBlock>
+                        <Header>Groups</Header>
+                        {this.state.user.groups.map((groups, i) => (
+                            <div key={i}>
+                                {groups.name}
+                            </div>
+                        ))}
+                        <Link to={`/users/${this.state.user._id}/addgroup`}>
+                            <Button>Add Group</Button>
+                        </Link>
+                    </GroupBlock>
+                </Body>
             </div>
         );
     }
