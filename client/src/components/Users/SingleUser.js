@@ -47,7 +47,8 @@ class SingleUser extends Component {
             location: "",
             dreamTrip: "",
             passport: Boolean,
-            trips: [{}]
+            trips: [{}],
+            groups: [{}]
         }
     }
 
@@ -85,6 +86,11 @@ class SingleUser extends Component {
 
                 <TripBlock>
                     <Header>Groups</Header>
+                    {this.state.user.groups.map((groups, i) => (
+                        <div key={i}>
+                            {groups.name}
+                        </div>
+                    ))}
                     <Button>Add Group</Button>
                 </TripBlock>
 

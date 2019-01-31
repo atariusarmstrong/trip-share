@@ -10,6 +10,10 @@ const User = new Schema({
     trips: [{
         type: Schema.Types.ObjectId,
         ref: 'Trip'
+    }],
+    groups: [{
+        type: Schema.Types.ObjectId,
+        ref: "Group"
     }]
 })
 

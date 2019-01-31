@@ -2,6 +2,31 @@ import React, { Component } from 'react';
 import NavBar from '../NavBar';
 import Axios from 'axios';
 import { Redirect } from 'react-router-dom'
+import styled from 'styled-components'
+
+const Container = styled.div`
+    width: 800px;
+    height: 350px;
+    border-radius: 40px;
+    background: #D5FFFF;
+    text-align center;
+    margin: 0 auto;
+    h2 {
+        font-family: SignPainter;
+        color: #707070;
+        font-size: 40px;
+        padding-top: 20px;
+    }
+    button {
+        border-radius: 5px;
+        background: #707070;
+        width: 100px;
+        height: 30px;
+        font-family: Avenir;
+        font-size: 20px
+        color: white;
+    }
+`
 
 class AddTripForm extends Component {
     state = {
@@ -43,7 +68,7 @@ class AddTripForm extends Component {
         return (
             <div>
                 <NavBar />
-                <div>
+                <Container>
                     <h2>Where are you going?</h2>
                     <form onSubmit = {this.handleSubmit}>
                         <input type="text" name="destination" value={this.state.trip.destination}n placeholder="Destination" onChange={this.handleChange}/><br/>
@@ -54,7 +79,7 @@ class AddTripForm extends Component {
                         {this.renderRedirect()}
                         <button type="submit">Let's Go!</button>
                     </form>
-                </div>
+                </Container>
             </div>
         );
     }

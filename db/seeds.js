@@ -17,12 +17,17 @@ const toronto = new Trip({
     accomodation: "Swanky Hotel",
     transportation: "Soutwest"
 })
+const familyreunion = new Group({
+    name: "Family Reunion",
+    trips: [barcelona]    
+})
 const atarius = new User({
     username: "atariusarmstrong",
     location: "Atlanta, GA",
     dreamTrip: "Barcelona",
     passport: true,
-    trips: [barcelona, toronto]
+    trips: [barcelona, toronto],
+    groups: [familyreunion]
 })
 const testuser = new User({
     username: "testuser",
@@ -30,11 +35,7 @@ const testuser = new User({
     dreamTrip: "anywhere"
 })
 
-const familyreunion = new Group({
-    name: "Family Reunion",
-    members: [atarius],
-    trips: [barcelona]    
-})
+
 
 
 User.deleteMany({})

@@ -1,5 +1,6 @@
 const Group = require('../models/Group')
 
+
 const groupController = {
     index: (req, res) => {
         Group.find({}).then((groups) => {

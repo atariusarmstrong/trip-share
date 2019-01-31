@@ -10,10 +10,11 @@ router.post('/signup', userController.create)
 
 router.get('/users', userController.index)
 router.get('/users/:userId', userController.show)
+router.get('/users/:userId/groups/:groupId', groupController.show)
 
 router.get('/groups', groupController.index)
 router.post('/groups', groupController.create)
-router.get('/groups/:groupId', groupController.show)
+
 router.patch('/groups/:groupId', groupController.update)
 router.delete('/groups/:groupId', groupController.delete)
 
