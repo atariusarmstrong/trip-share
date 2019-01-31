@@ -91,7 +91,9 @@ class SingleUser extends Component {
                             {groups.name}
                         </div>
                     ))}
-                    <Button>Add Group</Button>
+                    <Link to={`/users/${this.state.user._id}/addgroup`}>
+                        <Button>Add Group</Button>
+                    </Link>
                 </TripBlock>
 
             </div>

@@ -1,4 +1,5 @@
 const Group = require('../models/Group')
+const User = require('../models/User')
 
 
 const groupController = {
@@ -13,10 +14,14 @@ const groupController = {
         })
     },
     create: (req, res) => {
-        Group.create(req.body)
-            .then((group) => {
-                res.send(group)
-            })
+        User.findById(req.params.userId).then((user) => {
+            Group.create(req.body)
+                .then((group) => {
+                    user.groups.push(group)
+                    user.save()
+                    res.send(group)
+                })
+        })
     },
     update: (req, res) => {
         Group.findByIdAndUpdate(req.params.groupId, req.body, {new: true})
