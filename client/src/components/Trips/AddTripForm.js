@@ -61,7 +61,7 @@ class AddTripForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         const payload = this.state.trip
-        Axios.post('/api/addtrip', payload)
+        Axios.post(`/api/users/${this.props.match.params.userId}/addtrip`, payload)
         .then(this.setRedirect())
     }
     render() {

@@ -15,13 +15,15 @@ router.get('/users/:userId/groups/:groupId', groupController.show)
 router.patch('/users/:userId/groups/:groupId', groupController.update)
 router.delete('/users/:userId/groups/:groupId', groupController.delete)
 
+router.post('/users/:userId/addtrip', tripController.create)
+
 router.get('/groups', groupController.index)
 
 
 
 
 router.get('/trips', tripController.index)
-router.post('/addtrip', tripController.create)
+
 router.get('/trips/:tripId', tripController.show)
 router.patch('/trips/:tripId', tripController.update)
 router.delete('/trips/:tripId', tripController.delete)

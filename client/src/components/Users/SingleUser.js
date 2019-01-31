@@ -81,7 +81,7 @@ class SingleUser extends Component {
                             {trips.destination}
                         </div>
                     ))}
-                    <Link to={`/addtrip`}><Button>Add Trip</Button></Link>
+                    <Link to={`/users/${this.state.user._id}/addtrip`}><Button>Add Trip</Button></Link>
                 </TripBlock>
 
                 <TripBlock>

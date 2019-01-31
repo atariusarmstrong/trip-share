@@ -23,7 +23,7 @@ class App extends Component {
            <Route exact path="/signup" component={UserSignUp} />
            <Route exact path="/users" component={UsersList} />
            <Route exact path="/users/:userId" component={SingleUser} />
-           <Route exact path="/addtrip" component={AddTripForm} />
+           <Route exact path="/users/:userId/addtrip" component={AddTripForm} />
            <Route exact path="/trips" component={TripsList} />
            <Route exact path="/trips/:tripId" component={SingleTrip} />
            <Route exact path="/users/:userId/addgroup" component={AddGroupForm}/>
