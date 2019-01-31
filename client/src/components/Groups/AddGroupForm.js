@@ -57,7 +57,7 @@ class AddGroupForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         const payload = this.state.group
-        Axios.post(`/api/users/:userId/addgroup`, payload)
+        Axios.post(`/api/users/${this.props.match.params.userId}/addgroup`, payload)
         .then(this.setRedirect())
     }
 
