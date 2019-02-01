@@ -15,6 +15,7 @@ const InfoBlock = styled.div`
     background: #D5FFFF;
     grid-row-start: 2;
     grid-column-start: 1;
+    text-align: center;
 `
 
 const TripBlock = styled.div`

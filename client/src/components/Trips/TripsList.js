@@ -12,6 +12,9 @@ const TripBlock = styled.div`
     background: #D5FFFF;
     font-size: 20px;
     border-radius: 20px;
+    &:hover {
+        background: #00e6e6;
+    }
     
 `
 
@@ -40,6 +43,14 @@ const AddButton = styled.div`
     height: 100px;
     width: 100px;
     font-size: 60px;
+    span {
+        position: absolute;
+        text-align: center;
+    }
+    &:hover {
+        background: #00e6e6;
+    }
+
 `
 class TripsList extends Component {
     state = {
