@@ -26,6 +26,14 @@ const Container = styled.div`
         font-size: 20px
         color: white;
     }
+    input {
+        width: 85%;
+        height: 20px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-family: Avenir;
+        text-transform: uppercase;
+    }
 `
 
 class AddTripForm extends Component {

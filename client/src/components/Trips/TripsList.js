@@ -43,9 +43,8 @@ const AddButton = styled.div`
     height: 100px;
     width: 100px;
     font-size: 60px;
-    span {
-        position: absolute;
-        text-align: center;
+    p {
+
     }
     &:hover {
         background: #00e6e6;
@@ -93,7 +92,7 @@ class TripsList extends Component {
                         ))}
                         <Link to='/addtrip'>
                             <AddButton>
-                                <span>+</span>
+                                <p>+</p>
                             </AddButton>
                         </Link>
                         
