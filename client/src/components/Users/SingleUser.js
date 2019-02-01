@@ -59,6 +59,17 @@ const Body = styled.div`
 const ProfilePic = styled.div`
     grid-column-start: 1;
     grid-row-start: 1;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    border: solid 2px #707070;
+    justify-self: center;
+    margin-top: 50px;
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 100%;
+    }
 `
 
 class SingleUser extends Component {
