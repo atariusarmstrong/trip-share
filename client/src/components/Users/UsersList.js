@@ -11,10 +11,32 @@ const UserBlock = styled.div`
     width: 400px;
     float: left;
     margin: 10px;
+    &:hover {
+        background: #00e6e6;
+    }
 `
 const ProfilePic = styled.img`
     height: 150px;
     width: 250px;
+`
+const UserContainer = styled.div`
+    width: 1260px;
+    margin: 0 auto;
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+`
+
+const Body = styled.div`
+    font-family: Avenir;
+    letter-spacing: 2px;
+    color: #707070;
+    text-align: center;
+    text-transform: uppercase;
+    align-content: center;
+    a {
+        text-decoration: none;
+        color: #707070;
+    }
 `
 
 class UsersList extends Component {
@@ -34,16 +56,21 @@ class UsersList extends Component {
         return (
             <div>
                 <NavBar />
+                <Body>
+                    <UserContainer>
+                        {this.state.users.map((user, i) => (
+                            <UserBlock key={i}>
+                            <Link to={`/users/${user._id}`}>
+                                <ProfilePic src={user.image} alt={user.username}/>
+                                <h3>{user.username}</h3>
+                                <h4>{user.location}</h4>
+                            </Link>
+                            </UserBlock> 
+                        ))}
 
-                {this.state.users.map((user, i) => (
-                    <UserBlock key={i}>
-                    <Link to={`/users/${user._id}`}>
-                        <ProfilePic src={user.image} alt={user.username}/>
-                        <h3>{user.username}</h3>
-                        <h4>{user.location}</h4>
-                    </Link>
-                    </UserBlock> 
-                ))}
+                    </UserContainer>
+
+                </Body>   
             </div>
         );
     }

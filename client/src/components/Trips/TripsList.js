@@ -18,7 +18,7 @@ const TripBlock = styled.div`
     
 `
 
-const Body = styled.form`
+const Body = styled.div`
     font-family: Avenir;
     letter-spacing: 2px;
     color: #707070;
