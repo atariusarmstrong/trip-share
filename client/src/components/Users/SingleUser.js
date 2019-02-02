@@ -16,6 +16,8 @@ const InfoBlock = styled.div`
     grid-row-start: 2;
     grid-column-start: 1;
     text-align: center;
+    justify-self: center;
+    align-self: center;
 `
 
 const TripBlock = styled.div`
@@ -35,6 +37,7 @@ const GroupBlock = styled.div`
     border-radius: 20px;
     float: right;
     text-align: center;
+    
 `
 
 const Header = styled.h2`
@@ -54,7 +57,7 @@ const Button = styled.button`
 const Body = styled.div`
     display: grid;
     grid-template-columns: auto auto;
-    grid-template-rows: 75% 25%;
+    grid-template-rows: 50% 50%;
     p {
         text-transform: uppercase;
         font-family: Avenir;
@@ -71,8 +74,8 @@ const ProfilePic = styled.div`
     justify-self: center;
     margin-top: 50px;
     img {
-        max-width: 100%;
-        max-height: 100%;
+        width: 300px;
+        height: 300px;
         border-radius: 100%;
     }
 `
