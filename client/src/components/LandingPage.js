@@ -17,6 +17,8 @@ const Header = styled.h1`
     font-family: SignPainter;
     font-size: 120px;
     color: #707070;
+    text-align: center;
+
 `
 
 const Tag = styled.p`
@@ -25,12 +27,12 @@ const Tag = styled.p`
 `
 
 const Body = styled.div`
-    background-image: url(${background})
-    max-height: 100%;
-    background-attachment: fixed;
+    background-image: url("${background}");
+    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
 `
 
 class LandingPage extends Component {
@@ -40,13 +42,15 @@ class LandingPage extends Component {
                 <Body>
                     {/* hello
                     <img src={background} alt="background"/> */}
-                </Body>
                     <Header>TripShare</Header>
-                
-                <Tag>Let's plan your next trip together.</Tag>
 
-                <Link to='/signup'><Button>Let's Go!</Button></Link>
-                <Body></Body>
+                    <Tag>Let's plan your next trip together.</Tag>
+
+                    <Link to='/signup'><Button>Let's Go!</Button></Link>
+                </Body>
+                    
+                
+                
             </div>
         );
     }

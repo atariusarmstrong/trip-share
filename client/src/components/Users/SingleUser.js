@@ -53,6 +53,8 @@ const Button = styled.button`
     font-size: 15px
     letter-spacing: 2px;
     color: white;
+    text-transform: uppercase;
+    border-radius: 10px;
 `
 const Body = styled.div`
     display: grid;
@@ -122,7 +124,7 @@ class SingleUser extends Component {
                         <Header>Trips</Header>
                         {this.state.user.trips.map((trips, i) => (
                             <div key={i}>
-                                <p>{trips.destination}</p>
+                                <p>{trips.destination} | {trips.from}-{trips.to}</p>
                             </div>
                         ))}
                         <Link to={`/users/${this.state.user._id}/addtrip`}><Button>Add Trip</Button></Link>
