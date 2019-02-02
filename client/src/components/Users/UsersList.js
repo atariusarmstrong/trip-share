@@ -3,6 +3,7 @@ import Axios from 'axios';
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import NavBar from '../NavBar';
+import location from '../../icons/location.png'
 
 const UserBlock = styled.div`
     background: #D5FFFF;
@@ -16,8 +17,9 @@ const UserBlock = styled.div`
     }
 `
 const ProfilePic = styled.img`
-    height: 150px;
-    width: 250px;
+    max-height: 250px;
+    max-width: 250px;
+    margin-top: 10px;
 `
 const UserContainer = styled.div`
     width: 1260px;
@@ -63,7 +65,8 @@ class UsersList extends Component {
                             <Link to={`/users/${user._id}`}>
                                 <ProfilePic src={user.image} alt={user.username}/>
                                 <h3>{user.username}</h3>
-                                <h4>{user.location}</h4>
+                                <h4><img src={location} alt="location"/>{user.location}</h4>
+
                             </Link>
                             </UserBlock> 
                         ))}

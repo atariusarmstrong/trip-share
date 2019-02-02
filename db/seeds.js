@@ -23,6 +23,7 @@ const familyreunion = new Group({
 })
 const atarius = new User({
     username: "atariusarmstrong",
+    image: "https://scontent.fatl1-2.fna.fbcdn.net/v/t1.0-9/46444602_10156652123006427_5737935054571569152_n.jpg?_nc_cat=101&_nc_ht=scontent.fatl1-2.fna&oh=7a78815d9eeab5f90e9d0841e65677fa&oe=5CBC76C0",
     location: "Atlanta, GA",
     dreamTrip: "Barcelona",
     passport: true,

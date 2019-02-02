@@ -55,6 +55,11 @@ const Body = styled.div`
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: 75% 25%;
+    p {
+        text-transform: uppercase;
+        font-family: Avenir;
+        letter-spacing: 2px;
+    }
 `
 const ProfilePic = styled.div`
     grid-column-start: 1;
@@ -104,18 +109,17 @@ class SingleUser extends Component {
                         <img src={this.state.user.image} alt={this.state.user.username}/>
                     </ProfilePic>
                     <InfoBlock>
-                        {this.state.user.username}<br/>
-                        {this.state.user.location}<br/>
-                        Dream Vaction: 
-                        {this.state.user.dreamTrip}<br/>
-                        {this.state.user.passport}<br/>
+                        <p>{this.state.user.username}</p>
+                        <p>{this.state.user.location}</p>
+                        <p>Dream Vaction: {this.state.user.dreamTrip}</p>
+                        <p>{this.state.user.passport}</p>
                     </InfoBlock>
     
                     <TripBlock>
                         <Header>Trips</Header>
                         {this.state.user.trips.map((trips, i) => (
                             <div key={i}>
-                                {trips.destination}
+                                <p>{trips.destination}</p>
                             </div>
                         ))}
                         <Link to={`/users/${this.state.user._id}/addtrip`}><Button>Add Trip</Button></Link>
@@ -125,7 +129,7 @@ class SingleUser extends Component {
                         <Header>Groups</Header>
                         {this.state.user.groups.map((groups, i) => (
                             <div key={i}>
-                                {groups.name}
+                                <p>{groups.name}</p>
                             </div>
                         ))}
                         <Link to={`/users/${this.state.user._id}/addgroup`}>
