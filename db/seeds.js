@@ -30,10 +30,12 @@ const atarius = new User({
     trips: [barcelona, toronto],
     groups: [familyreunion]
 })
-const testuser = new User({
-    username: "testuser",
-    location: "somewhere",
-    dreamTrip: "anywhere"
+const travelbot = new User({
+    username: "TravelBot123",
+    image: "https://cdn-images-1.medium.com/max/1200/1*8mpWApzQD5gZZlnYYUkbcA.png",
+    location: "Apple",
+    dreamTrip: "Google HQ",
+    passport: true
 })
 
 
@@ -47,7 +49,7 @@ User.deleteMany({})
     .then(() => barcelona.save())
     .then(() => toronto.save())
     .then(() => atarius.save())
-    .then(() => testuser.save())
+    .then(() => travelbot.save())
     .then(() => familyreunion.save())
     .then(() => console.log('DB Seeded'))
     .then(() => mongoose.connection.close())
