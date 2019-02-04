@@ -12,6 +12,29 @@ const Container = styled.div`
     background: #D5FFFF;
     text-align center;
     margin: 0 auto;
+    h2 {
+        font-family: SignPainter;
+        color: #707070;
+        font-size: 40px;
+        padding-top: 20px;
+    }
+    button {
+        border-radius: 5px;
+        background: #707070;
+        width: 100px;
+        height: 30px;
+        font-family: Avenir;
+        font-size: 20px
+        color: white;
+    }
+    input {
+        width: 85%;
+        height: 20px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-family: Avenir;
+        text-transform: uppercase;
+    }
 `
 
 
