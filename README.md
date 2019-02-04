@@ -1,5 +1,5 @@
 # trip-share
-###Unit 3 Project by Atarius Armstrong
+Unit 3 Project by Atarius Armstrong
 
 TripShare is a fullstack MERN web application meant to log future group travel plans.
 
@@ -9,7 +9,7 @@ TripShare is a fullstack MERN web application meant to log future group travel p
 
 Wireframe
 ---
-###created with Adobe XD
+created with Adobe XD
 ![alt text](./LandingPage.png "Landing Page")
 ![alt text](./UserForm.png "User Form")
 ![alt text](./UserProfile.png "User Profile")
@@ -30,7 +30,9 @@ Dependencies
 Technologies Used
 ---
 * Language: HTML5, CSS3, Javascript
+* Adobe Photoshop
+* Adobe XD
 * Royalty free images: Unsplash
 * Royalty free icons: [Lucy Gonzalez of Dribble](https://dribbble.com/shots/2488469-Basic-Ui-Set)
+* [Redirecting in React](https://medium.com/@anneeb/redirecting-in-react-4de5e517354a) courtesy of Anne Barrett
 
-Photo by Phil Coffman on Unsplash
