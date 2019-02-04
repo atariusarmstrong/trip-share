@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
 import NavBar from '../NavBar';
 import location from '../../icons/location.png'
+import {fadeInDown} from 'react-animations'
+
+const fadeDown = keyframes`${fadeInDown}`
 
 const UserBlock = styled.div`
     background: #D5FFFF;
@@ -15,6 +18,7 @@ const UserBlock = styled.div`
     &:hover {
         background: #00e6e6;
     }
+    animation: ${fadeDown} 2s;
 `
 const ProfilePic = styled.img`
     max-height: 250px;
