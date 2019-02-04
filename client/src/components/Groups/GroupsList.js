@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import NavBar from '../NavBar';
 import axios from 'axios'
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
+import {fadeInDown} from 'react-animations'
+
+const fadeDown = keyframes`${fadeInDown}`
 
 const GroupBlock = styled.div`
     width: 400px;
@@ -18,6 +21,7 @@ const GroupBlock = styled.div`
     text-transform: uppercase;
     color: #707070;
     text-align: center;
+    animation: ${fadeDown} 2s;
     
 `
 
