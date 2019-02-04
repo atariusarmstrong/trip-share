@@ -16,6 +16,12 @@ const userController = {
         .then((user) => {
             res.send(user)
         })
+    },
+    delete: (req, res) => {
+        User.findByIdAndDelete(req.params.userId)
+        .then(() => {
+            res.send(200)
+        })
     }
 }
 

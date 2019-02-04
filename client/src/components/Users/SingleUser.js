@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import NavBar from '../NavBar';
 import map from '../../icons/map.png'
-
+import { Redirect } from 'react-router-dom'
 
 const InfoBlock = styled.div`
     width: 400px;
@@ -93,7 +93,8 @@ class SingleUser extends Component {
             passport: false,
             trips: [{}],
             groups: [{}]
-        }
+        },
+        redirect: false
     }
 
     componentDidMount = () => {
@@ -104,6 +105,22 @@ class SingleUser extends Component {
         const userId = this.props.match.params.userId
         axios.get(`/api/users/${userId}`)
         .then((res) => this.setState({ user: res.data }))
+    }
+
+    setRedirect = () => {
+        this.setState({redirect: true})
+    }
+
+    renderRedirect = () => {
+        if (this.state.redirect) {
+            return <Redirect to='/users' />
+          }
+    }
+
+    deleteProfile = () => {
+        const userId = this.props.match.params.userId
+        axios.delete(`/api/users/${userId}`)
+        .then(()=> this.setRedirect())
     }
 
     render() {
@@ -119,6 +136,8 @@ class SingleUser extends Component {
                         <p>{this.state.user.location}</p>
                         <p>Dream Vaction: {this.state.user.dreamTrip}</p>
                         <p>Passport {this.state.user.passport ? <img src={map} alt="passport"/> : null}</p>
+                        {this.renderRedirect()}
+                        <button onClick={this.deleteProfile}>Delete Profile</button>
                     </InfoBlock>
     
                     <TripBlock>
