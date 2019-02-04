@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import NavBar from '../NavBar';
 import Axios from 'axios';
 import { Redirect } from 'react-router-dom'
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
+import { fadeInLeft } from 'react-animations'
+
+const fadeLeft = keyframes`${fadeInLeft}`;
 
 const Container = styled.div`
     width: 800px;
@@ -25,6 +28,7 @@ const Container = styled.div`
         font-family: Avenir;
         font-size: 20px
         color: white;
+        text-transform: uppercase;
     }
     input {
         width: 85%;
@@ -34,6 +38,7 @@ const Container = styled.div`
         font-family: Avenir;
         text-transform: uppercase;
     }
+    animation: ${fadeLeft} 2s;
 `
 
 class AddTripForm extends Component {

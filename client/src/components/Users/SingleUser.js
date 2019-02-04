@@ -137,7 +137,7 @@ class SingleUser extends Component {
                         <p>Dream Vaction: {this.state.user.dreamTrip}</p>
                         <p>Passport {this.state.user.passport ? <img src={map} alt="passport"/> : null}</p>
                         {this.renderRedirect()}
-                        <button onClick={this.deleteProfile}>Delete Profile</button>
+                        <Button onClick={this.deleteProfile}>Delete Profile</Button>
                     </InfoBlock>
     
                     <TripBlock>

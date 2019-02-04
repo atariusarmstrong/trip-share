@@ -6,7 +6,7 @@ import styled from 'styled-components'
 
 const Container = styled.div`
     width: 800px;
-    height: 350px;
+    height: 200px;
     border-radius: 40px;
     background: #D5FFFF;
     text-align center;
@@ -25,6 +25,15 @@ const Container = styled.div`
         font-family: Avenir;
         font-size: 20px
         color: white;
+        text-transform: uppercase;
+    }
+    input {
+        width: 85%;
+        height: 20px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-family: Avenir;
+        text-transform: uppercase;
     }
 `
 

@@ -57,6 +57,8 @@ class UserSignUp extends Component {
     }
 
     selectPassport = (e) => {
+        const newState = {...this.state.user}
+
         this.setState({passport: true})
     }
 
