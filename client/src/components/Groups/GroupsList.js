@@ -14,6 +14,10 @@ const GroupBlock = styled.div`
     &:hover {
         background: #00e6e6;
     }
+    font-family: Avenir;
+    text-transform: uppercase;
+    color: #707070;
+    text-align: center;
     
 `
 

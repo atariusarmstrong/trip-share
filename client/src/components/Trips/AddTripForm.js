@@ -26,7 +26,7 @@ const Container = styled.div`
         width: 100px;
         height: 30px;
         font-family: Avenir;
-        font-size: 20px
+        font-size: 15px
         color: white;
         text-transform: uppercase;
     }

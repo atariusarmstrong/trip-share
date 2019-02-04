@@ -3,13 +3,12 @@ import Axios from 'axios';
 import NavBar from '../NavBar';
 import EditTripForm from './EditTripForm';
 import { Redirect } from 'react-router-dom'
-import styled, {keyframes} from 'styled-components'
+import styled from 'styled-components'
 import editbutton from '../../icons/editbutton.png'
-import {bounce} from 'react-animations'
+import deletebutton from '../../icons/delete.png'
 
 
 
-const bounceAnimation = keyframes`${bounce}`;
 
 const TripBlock = styled.div`
     width: 400px;
@@ -20,11 +19,6 @@ const TripBlock = styled.div`
     font-size: 20px;
     border-radius: 20px;
     color: #707070;
-    img {
-        &:hover{
-            animation: ${bounceAnimation} 2s;
-        }
-    }
 `
 
 const Body = styled.div`
@@ -92,7 +86,7 @@ class SingleTrip extends Component {
 
                         
                         {this.renderRedirect()}
-                        <button onClick={this.deleteTrip}>Delete</button>
+                        <img src={deletebutton} alt="delete" onClick={this.deleteTrip}/>
                     </TripBlock>
                     
                     
