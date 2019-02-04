@@ -9,7 +9,7 @@ Wireframe
 ![alt text](./UserForm.png "User Form")
 ![alt text](./UserProfile.png "User Profile")
 ![alt text](./Trips.png "Trips")
-![alt text](./TripsForm "Trips Form")
+![alt text](./TripsForm.png "Trips Form")
 ![alt text](./Groups.png "Groups")
 
 Dependencies
