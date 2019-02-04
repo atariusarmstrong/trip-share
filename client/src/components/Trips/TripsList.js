@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import NavBar from '../NavBar';
 import axios from 'axios'
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
 import {Link} from 'react-router-dom'
+import {fadeInDown} from 'react-animations'
+
+const fadeDown = keyframes`${fadeInDown}`
 
 const TripBlock = styled.div`
     width: 400px;
@@ -15,7 +18,7 @@ const TripBlock = styled.div`
     &:hover {
         background: #00e6e6;
     }
-    
+    animation: ${fadeDown} 2s;
 `
 
 const Body = styled.div`
