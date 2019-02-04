@@ -56,6 +56,10 @@ class UserSignUp extends Component {
         this.setState({user: newState})
     }
 
+    selectPassport = (e) => {
+        this.setState({passport: true})
+    }
+
     renderRedirect = () => {
         if (this.state.redirect) {
           return <Redirect to='/users' />
@@ -84,7 +88,9 @@ class UserSignUp extends Component {
                         <input type="text" name="image" value={this.state.user.image} placeholder="Link to Profile Photo" onChange={this.handleChange} /><br/>
                         <input type="text" name="location" value={this.state.user.location} placeholder="Where are you from?" onChange={this.handleChange}/><br/>
                         <input type="text" name="dreamTrip" value={this.state.user.dreamTrip} placeholder="Where's your dream destination?" onChange={this.handleChange}/><br/>
-                        <input type="checkbox" value={this.state.user.passport}/> Passport?
+                        <label>
+                            <input type="checkbox" name="passport" value={this.state.user.passport} onClick={this.selectPassport}/> Passport?
+                        </label>
                         <br/>
                         {this.renderRedirect()}
                         <button type="submit">Sign Up</button>

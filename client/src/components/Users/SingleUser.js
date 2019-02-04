@@ -3,11 +3,12 @@ import axios from 'axios'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import NavBar from '../NavBar';
+import map from '../../icons/map.png'
 
 
 const InfoBlock = styled.div`
     width: 400px;
-    height: 150px;
+    line-height: 80%
     border-radius: 20px;
     font-family: Avenir;
     font-size: 20px;
@@ -89,7 +90,7 @@ class SingleUser extends Component {
             image: "",
             location: "",
             dreamTrip: "",
-            passport: Boolean,
+            passport: false,
             trips: [{}],
             groups: [{}]
         }
@@ -117,7 +118,7 @@ class SingleUser extends Component {
                         <p>{this.state.user.username}</p>
                         <p>{this.state.user.location}</p>
                         <p>Dream Vaction: {this.state.user.dreamTrip}</p>
-                        <p>{this.state.user.passport}</p>
+                        <p>Passport {this.state.user.passport ? <img src={map} alt="passport"/> : null}</p>
                     </InfoBlock>
     
                     <TripBlock>
